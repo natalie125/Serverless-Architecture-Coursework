@@ -1,0 +1,12 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: resize-image
+  namespace: default
+spec:
+  template:
+    spec:
+      containers:
+        - image: natalie1205/resize-image-knative:latest
+          ports:
+            - containerPort: 8080
